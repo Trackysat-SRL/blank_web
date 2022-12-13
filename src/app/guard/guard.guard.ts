@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../services/authentication/authentication.service';
 
@@ -7,9 +7,8 @@ import { AuthenticationService } from '../services/authentication/authentication
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
-  router: any;
 
-  constructor(private authService:AuthenticationService){}
+  constructor(private authService:AuthenticationService,private router: Router){}
 
   canActivate(): boolean {
     if (!this.authService.isLoggedIn()) {
