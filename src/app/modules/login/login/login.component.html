@@ -1,0 +1,23 @@
+
+
+<div class="container">
+    <div class="loginForm">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label><mat-icon>person</mat-icon>User</mat-label>
+                <input matInput type="text" placeholder="User" [(ngModel)]="username" required>
+                <mat-error *ngIf="!username">{{'Campo obbligatorio'}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label><mat-icon>lock</mat-icon>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required [(ngModel)]="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="!password">{{'Campo obbligatorio'}}</mat-error>
+            </mat-form-field>
+            <div class="text-end">
+                <button  mat-raised-button [disabled]="!username|| !password" type="submit" (click)="login()" color="primary">{{'Login'}}</button>
+            </div>
+    </div>
+  </div>

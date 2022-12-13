@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mainmenu,.topbarmenu{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-weight: 500;
+  }
+
+  .mainmenu .mat-icon{
+    font-size:20px!important;
+    vertical-align: top;
+    height: 20px!important;
+    line-height: 20px!important;
+    text-align:center;
+    width: 20px!important;
+    margin-right:8px;
+    display:inline-block;
+    font-weight: 300;
+    transition:all linear .2s;
+    vertical-align: middle;
+  }
+
+  .mainmenu li{
+
+  }
+
+  .mainmenu li a{
+    color:rgb(241, 240, 240);
+    text-decoration:none;
+    //text-transform: uppercase;
+    padding:15px 15px;
+    display: block;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    transition:all linear .2s;
+    cursor:pointer;
+    font-size: 12px;
+    /*font-weight: 600;*/
+  }
+
+  .mainmenu li a:hover{
+    background-color:rgba(0,0,0,.1)
+  }
+
+  .mainmenu li a.active-link{
+    font-weight: 600;
+    color:rgb(14, 13, 13);
+    transition:all linear .2s;
+    background-color:rgba(0,0,0,.1)
+  }
