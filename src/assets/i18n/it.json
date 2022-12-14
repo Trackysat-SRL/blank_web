@@ -1,0 +1,9 @@
+{
+  "login" : "Accedi",
+  "password" : "Password",
+  "username" : "Username",
+  "error" : {
+    "field_required" : "Campo obbligatorio"
+  }
+
+}

@@ -1,0 +1,8 @@
+{
+  "login" : "Login",
+  "password" : "Password",
+  "username" : "Username",
+  "error" : {
+    "field_required" : "Field required"
+  }
+}

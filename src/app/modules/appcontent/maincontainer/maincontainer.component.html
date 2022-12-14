@@ -1,59 +1,38 @@
-
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
         <app-sidemenu ></app-sidemenu>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-              <mat-icon>menu</mat-icon>
-            </button>
-            <span class="example-spacer"></span>
-            <span >{{profile.firstName| slice:0:1}}. {{profile.lastName}} </span>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/login">
-              <mat-icon>logout</mat-icon>
-            </button>
-          </mat-toolbar>
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+
+        <button mat-button [matMenuTriggerFor]="menu" class="text-capitalize">
+          {{profile.firstName| slice:0:1}}. {{profile.lastName}}
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <!--<a routerLink="/profile/manage-account" mat-menu-item>{{ 'PROFILE' | translate }}</a>-->
+          <a routerLink="/login" mat-menu-item>{{ 'LOGOUT' | translate }}</a>
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="langmenu">
+          <img src="assets/img/flags/{{appcomponent.currentLang}}.png" alt="{{appcomponent.currentLang}}"/>
+        </button>
+
+        <mat-menu #langmenu="matMenu" xPosition="before">
+          <button mat-menu-item (click)="appcomponent.useLanguage('it')"><img src="assets/img/flags/it.png" alt="it"/> Italiano</button>
+          <button mat-menu-item (click)="appcomponent.useLanguage('en')"><img src="assets/img/flags/en.png" alt="en"/> English</button>
+        </mat-menu>
+
+
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/login">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </mat-toolbar>
+      <router-outlet #o="outlet"></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<!--<mat-sidenav-container>
-    <mat-sidenav mode="side" opened>
-
-      <div class="profilemenu">
-        <div class="row">
-          <div class="col-8 align-self-center ">
-            <p class="username">
-              {{profile.firstName| slice:0:1}}. {{profile.lastName}}
-            </p>
-          </div>
-
-          <div class="col-4 align-self-center text-end">
-            <button mat-icon-button [matMenuTriggerFor]="rootMenu" class="smallicon">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #rootMenu="matMenu">
-              <a routerLink="/login" mat-menu-item>{{ 'LOGOUT'  }}</a>
-            </mat-menu>
-
-          </div>
-        </div>
-
-
-      </div>
-
-
-
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-
-
-        <div class="page_content">
-          <router-outlet #o="outlet"></router-outlet>
-        </div>
-
-      </mat-sidenav-content>
-  </mat-sidenav-container>-->

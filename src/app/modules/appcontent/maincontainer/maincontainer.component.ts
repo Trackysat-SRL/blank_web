@@ -1,5 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { HelperService } from 'src/app/services/helper/helper.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class MaincontainerComponent {
   openedsettings: boolean = false;
   theme: string = 'blue-theme';
 
-  constructor(private helper: HelperService,public overlayContainer: OverlayContainer,){
+  constructor(private helper: HelperService,public overlayContainer: OverlayContainer,public appcomponent: AppComponent){
     this.profile = this.helper.getProfile();
   }
 

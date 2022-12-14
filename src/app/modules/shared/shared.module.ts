@@ -9,11 +9,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TranslateModule
   ],
   exports:[
     MatFormFieldModule,
@@ -23,7 +25,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSnackBarModule,
     MatSidenavModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    TranslateModule,
   ]
 })
 export class SharedModule { }

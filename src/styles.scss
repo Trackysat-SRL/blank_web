@@ -50,3 +50,31 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     transition:all linear .2s;
     background-color:rgba(0,0,0,.1)
   }
+
+  .mat-menu-content .mat-menu-item{
+    height:auto;
+    line-height:30px;
+  }
+
+  .mat-menu-content{
+    min-width:200px;
+  }
+
+  .mat-menu-content{
+    width:200px;
+  }
+
+  a.mat-menu-item:hover{
+    text-decoration: none;
+  }
+
+  .mat-menu-content h5{
+    padding:5px 10px;
+  }
+
+  .actionmenu{
+    display:inline-block;
+  }
+  .maxwidth{
+    width:100%;
+  }

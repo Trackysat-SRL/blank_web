@@ -14,10 +14,10 @@
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <mat-error *ngIf="!password">{{'Campo obbligatorio'}}</mat-error>
+                <mat-error *ngIf="!password">{{'error.field_required' | translate}}</mat-error>
             </mat-form-field>
             <div class="text-end">
-                <button  mat-raised-button [disabled]="!username|| !password" type="submit" (click)="login()" color="primary">{{'Login'}}</button>
+                <button  mat-raised-button [disabled]="!username|| !password" type="submit" (click)="login()" color="primary">{{'login' | translate}}</button>
             </div>
     </div>
   </div>

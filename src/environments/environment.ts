@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:  'https://test.seqprocess.com/api/' /*'http://localhost:8080/api/'*/,
+  apiUrl:  /*'https://test.seqprocess.com/api/' */ 'http://localhost:8080/api/',
 };
 
 /*
